@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
+import LetterBoxListContainer from './LetterBoxListContainer'
+import SelectedWordContainer from './SelectedWordContainer'
+import CounterSectionContainer from './CounterSectionContainer'
+import GameOver from './GameOver'
+import { wordList } from '../constants'
+import { getWordFromList } from '../helpers/word'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+  componentDidMount() {
+    const { setCurrentWord } = this.props
+    const currentWord = getWordFromList().toLowerCase()
 
-export default App;
+    setCurrentWord(currentWord)
+  }
+
+  render() {
+    const { isGameOver } = this.props
+
+    return (
+        !isGameOver ? (<div className="App container">
+          <div className="col">
+            <SelectedWordContainer />
+            <LetterBoxListContainer />
+          </div>
+          <div className="col">
+            <CounterSectionContainer />
+          </div>
+        </div>)
+        :
+        <GameOver />
+      )
+    }
+  }
+
+export default App

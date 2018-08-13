@@ -1,28 +1,121 @@
 .App {
+  height: 100%;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.letter-box-container {
+  /* Image Credit to SubtlePatterns */
+  border: 10px solid #999;
+  border-radius: 8px;
+  margin: 50px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/***************************
+  LETTER BLOCK
+  ***************************/
+
+.letter-block {
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  width: 25px;
+  display: inline-block;
+  border: 5px solid black;
+  padding: 0.1em 0.25em;
+  border-radius: 6px;
+  margin: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.letter-block:hover {
+  cursor: pointer;
+  color: #fff;
 }
 
-.App-intro {
-  font-size: large;
+.letter-block:active {
+  border: 5px solid #fff;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.letter-block.disabled {
+  border: 5px solid #fff;
+  color: #fff;
+  cursor: default;
 }
+
+
+/***************************
+  LETTER BLOCK - COLORS
+  ***************************/
+
+.green {
+  color: DarkGreen;
+  border-color: DarkGreen;
+}
+
+.blue {
+  color: DarkBlue;
+  border-color: DarkBlue;
+}
+
+.red {
+  color: DarkRed;
+  border-color: DarkRed;
+}
+
+.yellow {
+  color: DarkOrange;
+  border-color: DarkOrange;
+}
+
+/*
+  Task: Center Flexbox in the middle of
+  the page regardless of screen size
+  */
+
+/* Completely selected boxes should have letter and border white */
+.selected-word-list {
+  display: inline-block;
+}
+
+.selected-word-list li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px;
+  font-size: 50px;
+}
+
+span.letter {
+  border-bottom: 2px solid #000;
+}
+
+span.placeholder {
+  border-bottom: 2px solid #000;
+  padding: 0 15px;
+}
+
+.col {
+  float: left;
+  width: 50%;
+}
+
+.counter-section {
+  text-align: center;
+}
+
+span.counter-section--num {
+  font-size: 100px;
+  position: absolute;
+  top: 200px;
+}
+
+button.game-over-btn {
+    width: 125px;
+    height: 40px;
+    border-radius: 6px;
+    color: #fff;
+    background: #07C;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    margin-top: 200px;
+  }
+  
