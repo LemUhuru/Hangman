@@ -18,17 +18,17 @@ class App extends Component {
     const { isGameOver } = this.props
 
     return (
-        !isGameOver ? (<div className="App container">
+        <div className="App container">
           <div className="col">
             <SelectedWordContainer />
             <LetterBoxListContainer />
+            {isGameOver && <GameOver />}
           </div>
           <div className="col">
             <CounterSectionContainer />
           </div>
-        </div>)
-        :
-        <GameOver />
+        </div>
+
       )
     }
   }
